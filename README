@@ -1,0 +1,170 @@
+
+==============
+Informacoes gerais da aplicacao mobile
+
+Para subir o servidor rodar o comando
+npx expo start
+
+Para testar no celular ler o QR Code e abrir no App Expo GO do celular
+
+
+==========================
+Instalando Expo Managed Workflow (Expo GO)
+
+Dependências
+Para configurar o ambiente Android e iOS no macOS utilizando Expo Managed Workflow (Expo GO), precisamos de 8 ferramentas principais:
+
+n (Node package manager)
+Node.js (LTS);
+npm (já vem instalado com o Node);
+Homebrew
+git
+Watchman
+expo-cli
+Expo GO (app a ser instalado no dispositivo Android e/ou iOS)
+Instalando Node.js (LTS) e npm
+Em seguida é preciso instalar o Node.js (LTS) e npm no nosso sistema.
+
+Para instalar no seu sistema, você pode utilizar um gerenciador de pacotes como o n ou instalar utilizando o NodeSource. Nesse guia iremos utilizar o n, então basta acessar abrir o seu terminal e executar os comandos abaixo:
+
+Se você já tiver o Node.js instalado em sua máquina, certifique-se que sua versão é a 14 ou mais recente.
+
+curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+sudo bash n lts
+sudo npm install -g n
+Caso ocorra um erro dizendo que você não possui permissão (EACESS), siga os passo desse link
+
+Para verificar se a instalação foi um sucesso, basta executar os comandos abaixo:
+
+No momento da escrita dessa documentação, a versão LTS do Node mais recente é a 16.16.0, do npm é a 8.14.0 e do n é a 9.0.0.
+
+node -v
+npm -v
+n --version
+Se foram apresentados os valores das versões, as instalações foram um sucesso.
+
+Homebrew (Instalei)
+O Homebrew é um gerenciador de pacotes para OS X muito famoso e útil. Vamos instalá-lo em nosso sistema como seguinte comando:
+
+Executar
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Para verificar se a instalação foi um sucesso, basta executar o comando abaixo no terminal:
+brew -v
+
+Git
+O git pode já vir instalado na sua distro. Para verificar, basta executar git --version no seu terminal.
+Para instalar no seu sistema, basta você executar no seu terminal o comando abaixo:
+
+brew install git
+Para verificar se a instalação foi um sucesso, basta executar o comando abaixo:
+
+
+No momento da escrita dessa documentação, a versão do Git para macOS mais recente é a 2.32.1.
+
+git --version
+Se foi apresentado o valor da sua versão, a instalação foi um sucesso.
+
+Watchman
+Com o Homebrew instalado, vamos instalar o Watchman:
+
+Executar
+brew install watchman
+Após a instalação, verifique se ela foi realizada com sucesso executando o seguinte comando no terminal:
+
+Copy
+watchman -v
+
+expo-cli
+Para instalar no seu sistema, você irá utilizar o seu gerenciador de pacotes npm. Abra o seu terminal e execute o comando:
+
+sudo npm install -g expo-cli
+Caso ocorra um erro dizendo que você não possui permissão (EACESS), siga os passo desse link
+
+Para verificar se a instalação foi um sucesso, basta executar o comando abaixo:
+
+No momento da escrita dessa documentação, a versão do expo-cli mais recente é a 5.5.1.
+
+expo --version
+Se foi apresentado o valor da sua versão, a instalação foi um sucesso.
+
+Caso apareça um erro dizendo que o comando expo não foi encontrado, siga os passos desse link
+
+Expo GO
+Com a CLI instalada no seu computador, você consegue criar projetos Expo e executar o metro bundler para servir o seu código, mas para executar o app no seu celular (ou emulador) você precisa instalar o aplicativo Expo GO. Ele é o responsável por pegar o código que o metro bundler envia e exibir em tela o seu app React Native.
+
+Neste ponto conseguimos executar 
+npx expo start 
+
+Para instalá-lo no seu dispositivo físico, basta buscar nas lojas o aplicativo Expo Go:
+
+Play Store
+Apple Store
+Para instalá-lo no seu emulador, basta executar o comando expo start e escolher qual emulador você deseja executar. Caso o Expo GO não esteja instalado, ele irá solicitar a sua autourização para instalar a versão necessária.
+
+Emulador
+Android
+Com o Android Studio, é possível configurar um emulador Android e executar a sua aplicação nele.
+
+Porém, esses emuladores consomem bastante recursos do seu computador. Por isso, se você possui um dispositivo físico Android e sua máquina possui configurações modestas (ex.: ⬇ i3, ⬇ 4gb RAM), é recomendado executar a aplicação no seu dispositivo físico pelo Expo GO.
+
+Para aprender a instalar e configurar o seu emulador, siga esse guia
+
+iOS (Usei este)
+Com o XCode, é possível configurar um simulator iOS e executar a sua aplicação nele.
+
+Diferentemente do Android Studio, o simulator do iOS não é tão pesado, então caso queira aprender a configurar seu ambiente iOS nativo e executar suas aplicações no iOS Simulator, siga os passos desse link
+
+Executando aplicação
+Agora que você possui tudo que é necessário para executar sua aplicação Expo, basta seguir os seguintes passos:
+
+Acesse a pasta do seu projeto pelo terminal
+Execute o comando npx expo start
+Abra o app no seu dispositivo via Expo GO
+Se for dispositivo físico Android, basta abrir o app Expo GO, selecionar a opção Scan QR code e ler o QR Code apresentado no terminal.
+Se for dispositivo físico iOS, basta abrir o app de camera do iOS, ler o QR Code apresentado no terminal e clicar no popup Open with Expo Go app
+Se for emulador Android, basta digitar a no terminal.
+Se for simulator iOS, basta digitar i no terminal.
+Seguindo esses passo seu app deve abrir com sucesso no seu dispositivo 🎉
+
+==========================
+Intro
+Nesse guia iremos assumir que você já possui o ambiente básico do React Native (Expo Managed Workflow). 
+As dependências desse ambiente são:
+
+cURL
+n
+Node.js (LTS);
+npm (já vem instalado com o Node);
+git
+Homebrew
+Watchman
+expo-cli
+Expo GO (app a ser instalado no dispositivo Android e/ou iOS)
+Caso você não possua esse ambiente, siga esses passos
+
+Seguindo para configuração do ambiente Android no macOS utilizando Expo Bare Workflow ou React Native CLI, iremos realizar 2 instalações principais:
+
+CocoaPods;
+XCode.
+CocoaPods
+CocoaPods é um gerenciador de dependências que precisaremos instalar para que nossos projetos React Native funcionem corretamente. Execute o seguinte comando no seu terminal:
+
+Copy
+sudo gem install cocoapods
+
+Xcode
+A equipe do React Native recomenda que a versão mínima do XCode utilizada seja a 12 para garantir que não ocorram erros. Caso não consiga atualizar sua versão por ter um SO antigo e tenha muitos problemas com os projetos iOS, recomendamos que utilize o Android
+
+Xcode é uma ferramenta gratuita desenvolvida pela Apple e essencial nos projetos React Native para iOS, visto que é a partir dela que temos acesso a SDKs e Simuladores de diversos dispositivos Apple.
+
+Para baixar, basta acessar a Mac App Store, buscar por Xcode e clicar no botão de Download. Também é possível baixar por esse link.
+
+iOS Simulator
+Para aprender como abrir o seu iOS Simulator, siga esses passos.
+
+Executando app no Dispositivo via USB
+Caso você tenha um dispositivo físico iOS, também é possível executar a aplicação diretamente nele. Caso tenha interesse em configurar essa etapa, clique aqui
+
+
+
